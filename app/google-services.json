@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "177970229879",
+    "project_id": "mybiochemistry-d1526",
+    "storage_bucket": "mybiochemistry-d1526.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177970229879:android:c6564bdabdd304e4d64c72",
+        "android_client_info": {
+          "package_name": "my.biochemistry.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP1N-X-IRaEsMtufGLy8L_hDZ9JsKhRHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

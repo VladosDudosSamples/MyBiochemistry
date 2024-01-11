@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyBiochemistry" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:statusBarColor">@color/main_blue</item>
+    </style>
+
+    <style name="Theme.MyBiochemistry" parent="Base.Theme.MyBiochemistry" />
+</resources>
