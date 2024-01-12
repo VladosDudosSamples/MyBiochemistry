@@ -29,6 +29,6 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun onClick(){
-        binding.authorisationButton.setOnClickListener { findNavController().navigate(R.id.action_registrationFragment_to_loginFragment) }
+        binding.authorisationButton.setOnClickListener { findNavController().popBackStack() }
     }
 }

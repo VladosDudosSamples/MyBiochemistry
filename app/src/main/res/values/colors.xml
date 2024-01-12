@@ -6,5 +6,6 @@
     <color name="dark_blue">#0078A8</color>
     <color name="hint_blue">#AA00B3D3</color>
     <color name="hint">#CCC2C2</color>
+    <color name="grey">#858585</color>
 
 </resources>

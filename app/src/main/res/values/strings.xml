@@ -13,4 +13,19 @@
     <string name="registration">Регистрация</string>
     <string name="password">Пароль</string>
     <string name="mail">Эл.почта</string>
+    <string name="Wellcome">Добро пожаловать!</string>
+    <string name="intro_text">С помощью нашего приложения вы можете узнать гораздо больше о биохимии и её аспектах</string>
+    <string name="go_to_biochemistry">Перейти к\nразделам БХ</string>
+    <string name="subscription">Подписка</string>
+    <string name="activated">Активна</string>
+    <string name="test_date">12.03.2024</string>
+    <string name="ending">окончания</string>
+    <string name="date">дата</string>
+    <string name="subscribe">подписки</string>
+    <string name="biochemistry_list">Разделы биохимии</string>
+    <string name="protein">Белки</string>
+    <string name="more_about_course">Подробнее о курсе</string>
+    <string name="settings">Настройки</string>
+    <string name="enter_promo">Ввести промокод</string>
+    <string name="logout">Выйти</string>
 </resources>
