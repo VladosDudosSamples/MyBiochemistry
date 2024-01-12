@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.mybiochemistry.R
 import com.example.mybiochemistry.databinding.FragmentRegistrationBinding
 import com.example.mybiochemistry.databinding.FragmentSplashBinding
@@ -21,4 +22,13 @@ class RegistrationFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        onClick()
+    }
+
+    private fun onClick(){
+        binding.authorisationButton.setOnClickListener { findNavController().navigate(R.id.action_registrationFragment_to_loginFragment) }
+    }
 }
