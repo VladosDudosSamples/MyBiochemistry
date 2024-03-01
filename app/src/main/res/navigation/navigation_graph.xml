@@ -24,26 +24,6 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/navigation_graph"
-            app:popUpToInclusive="true"/>
-    </fragment>
-    <fragment
-        android:id="@+id/listMoleculeFragment"
-        android:name="com.example.mybiochemistry.view.fragment.ListMoleculeFragment"
-        android:label="fragment_list_molecule"
-        tools:layout="@layout/fragment_list_molecule" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.mybiochemistry.view.fragment.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_listMoleculeFragment"
-            app:destination="@id/listMoleculeFragment"
-             />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"

@@ -2,6 +2,7 @@ package com.example.mybiochemistry.app
 
 import android.app.Application
 import android.content.Context
+import com.google.firebase.FirebaseApp
 
 class App : Application() {
     companion object{
@@ -11,9 +12,9 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        FirebaseApp.initializeApp(this)
         dm = DataManager(baseContext)
         dm.initEncryptedSharedPrefs(baseContext)
         appContext = applicationContext
     }
-
 }

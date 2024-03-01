@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_drawer"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mybiochemistry.view.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_listMoleculeFragment"
+            app:destination="@id/listMoleculeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment2_to_promoFragment"
+            app:destination="@id/promoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_moreInfoFragment"
+            app:destination="@id/moreInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listMoleculeFragment"
+        android:name="com.example.mybiochemistry.view.fragment.ListMoleculeFragment"
+        android:label="fragment_list_molecule"
+        tools:layout="@layout/fragment_list_molecule" >
+        <action
+            android:id="@+id/action_listMoleculeFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreInfoFragment"
+        android:name="com.example.mybiochemistry.view.fragment.MoreInfoFragment"
+        android:label="fragment_more_info"
+        tools:layout="@layout/fragment_more_info" />
+    <fragment
+        android:id="@+id/promoFragment"
+        android:name="com.example.mybiochemistry.view.fragment.PromoFragment"
+        android:label="fragment_promo"
+        tools:layout="@layout/fragment_promo" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.mybiochemistry.view.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

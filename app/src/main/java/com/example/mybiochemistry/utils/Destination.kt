@@ -15,4 +15,5 @@ object Destination {
         PartListModel(R.drawable.change_list_img, "Обмен б."),
         PartListModel(R.drawable.blood_list_img, "Кровь")
     )
+    var isDrawerGraph = false
 }

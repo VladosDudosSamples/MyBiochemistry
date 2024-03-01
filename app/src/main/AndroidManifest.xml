@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
+            android:name=".view.activity.DrawerActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.MainActivity"
             android:exported="true">
             <intent-filter>

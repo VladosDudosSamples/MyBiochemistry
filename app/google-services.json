@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:177970229879:android:c6564bdabdd304e4d64c72",
+        "mobilesdk_app_id": "1:177970229879:android:3937e01416ee8ec7d64c72",
         "android_client_info": {
-          "package_name": "my.biochemistry.app"
+          "package_name": "com.example.mybiochemistry"
         }
       },
       "oauth_client": [],

@@ -28,4 +28,12 @@
     <string name="settings">Настройки</string>
     <string name="enter_promo">Ввести промокод</string>
     <string name="logout">Выйти</string>
+    <string name="empty_string"></string>
+    <string name="confidential_policy">Политика конфиденциальности</string>
+    <string name="enter_correct_email">Введите корректную почту\n</string>
+    <string name="enter_email">Введите свою почту</string>
+    <string name="you_have_been_successfully_authorised">Авторизация прошла успешно</string>
+    <string name="failed_to_authorize">Ошибка при авторизации\n\n</string>
+    <string name="enter_the_password">Поле пароля не должно быть пустым\n</string>
+    <string name="smth_went_wrong">Что-то пошло не так</string>
 </resources>

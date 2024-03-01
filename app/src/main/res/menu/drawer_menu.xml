@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/biochemistry_parts"
+    <item android:id="@+id/listMoleculeFragment"
         android:title="@string/biochemistry_list"
         android:icon="@drawable/baseline_layers_24"/>
 
-    <item android:id="@+id/more_about"
+    <item android:id="@+id/moreInfoFragment"
         android:title="@string/more_about_course"
         android:icon="@drawable/baseline_info_24"/>
 
-    <item android:id="@+id/settings"
+    <item android:id="@+id/settingsFragment"
         android:title="@string/settings"
         android:icon="@drawable/baseline_settings_24"/>
 
-    <item android:id="@+id/enter_promo"
+    <item android:id="@+id/promoFragment"
         android:title="@string/enter_promo"
         android:icon="@drawable/baseline_qr_code_24"/>
 
