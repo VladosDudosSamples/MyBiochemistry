@@ -43,12 +43,41 @@ class LoginFragment : Fragment() {
         }
     }
 
+    private fun authorise() {
+        with(binding) {
+            val mail = userNameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+            if (checkInput()) {
+                auth.signInWithEmailAndPassword(mail, password)
+                    .addOnCompleteListener(requireActivity()) { task ->
+                        if (task.isSuccessful) {
+                            Log.d(ContentValues.TAG, "signInWithEmail:success")
+                            val user = auth.currentUser
+                            updateUI(user)
+                            App.dm.passLogin()
+                            App.dm.encryptToken(user!!.uid)
+                            startActivity(Intent(requireContext(), DrawerActivity::class.java))
+                        } else {
+                            Log.w(ContentValues.TAG, "signInWithEmail:failure", task.exception)
+                            makeToast(task.exception.toString())
+                            updateUI(null)
+                        }
+                    }
+            }
+        }
+    }
+
     private fun checkInput(): Boolean {
-//        if (checkEmail(binding.editLogin.text.toString())) {
-        if (!binding.passwordEditText.text.isNullOrEmpty()) {
-            return true
-        } else makeToast(getString(R.string.enter_the_password))
-//        }
+        when {
+            !Patterns.EMAIL_ADDRESS.matcher(binding.userNameEditText.text)
+                .matches() -> makeToast(getString(R.string.enter_email))
+
+            binding.userNameEditText.text.isNullOrEmpty() -> makeToast(getString(R.string.enter_email))
+            binding.passwordEditText.text.isNullOrEmpty() -> makeToast(getString(R.string.enter_the_password))
+            binding.passwordEditText.text.toString().length < 6 -> makeToast(getString(R.string.password_must_be_6_symbols_at_least))
+
+            else -> return true
+        }
         return false
     }
 
@@ -57,65 +86,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun updateUI(account: FirebaseUser?) {
-        if (account != null) {
-            makeToast(getString(R.string.you_have_been_successfully_authorised))
-        } else {
-            makeToast(getString(R.string.failed_to_authorize))
-        }
+        if (account != null)
+            makeToast(getString(R.string.successfully_authorised))
+        else makeToast(getString(R.string.smth_went_wrong))
     }
-
-    private fun authorise() {
-        val mail = binding.userNameEditText.text.toString()
-        val password = binding.passwordEditText.text.toString()
-        if (checkInput()) {
-            startActivity(
-                Intent(
-                    requireContext(),
-                    DrawerActivity::class.java
-                )
-            )
-//            auth.signInWithEmailAndPassword(mail, password)
-//                .addOnCompleteListener(requireActivity()) { task ->
-//                    if (task.isSuccessful) {
-//                        Log.d(ContentValues.TAG, "signInWithEmail:success")
-//                        val user = auth.currentUser
-//                        updateUI(user)
-//                        App.dm.setUserKey(user!!.uid)
-//                        App.dm.passLogin()
-//
-            requireActivity().finish()
-//        } else {
-//            Log.w(ContentValues.TAG, "signInWithEmail:failure", task.exception)
-//            makeToast(getString(R.string.smth_went_wrong))
-//        }
-//    }
-        }
-    }
-
-//    private fun resetPassword() {
-//        if (checkEmail(binding.editLogin.text.toString())) {
-//            MaterialDialog(requireActivity())
-//                .title(text = getString(R.string.do_you_want_to_reset_password_for))
-//                .message(text = binding.editLogin.text.toString() + " ?")
-//                .positiveButton(text = "Yes") {
-//                    auth.sendPasswordResetEmail(binding.editLogin.text.toString())
-//                        .addOnCompleteListener {
-//                            if (!it.isSuccessful) {
-//                                Toast.makeText(activity, getString(R.string.some_problems_went), Toast.LENGTH_SHORT)
-//                                    .show()
-//                            }
-//                        }
-//                }
-//                .show { }
-//        } else Toast.makeText(activity, getString(R.string.your_email_must_be_correct), Toast.LENGTH_SHORT).show()
-//    }
-//    private fun checkEmail(email: String): Boolean {
-//        when {
-//            !Patterns.EMAIL_ADDRESS.matcher(binding.editLogin.text)
-//                .matches() -> makeToast(getString(R.string.enter_correct_email))
-//            binding.editLogin.text.isNullOrEmpty() -> makeToast(getString(R.string.enter_email))
-//            else -> return true
-//        }
-//        return false
-//    }
 }

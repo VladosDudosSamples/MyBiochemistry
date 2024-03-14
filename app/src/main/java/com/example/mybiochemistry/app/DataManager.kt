@@ -40,11 +40,4 @@ class DataManager(private val baseContext: Context)  {
         preferences.edit().putString(tokenString, "").apply()
         preferences.edit().putBoolean(baseContext.getString(R.string.login_passed), false).apply()
     }
-    fun getUserKey(): String {
-        return preferences.getString("UserKey", "") ?: ""
-    }
-
-    fun setUserKey(key: String) {
-        return preferences.edit().putString("UserKey", key).apply()
-    }
 }
